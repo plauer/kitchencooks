@@ -17,6 +17,10 @@
     <script src="/javascripts/angularUI/kitchenCtrl.js"></script>
     <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">
     <script src = "/javascripts/chat-bar.js"></script>
+    <script src = "/libz/holla.js"></script>
+<!--     <script src='/socket.io/socket.io.js'></script>
+ -->    <script src = "/javascripts/sockets.js"></script>
+
 
   </head>
   <body>
@@ -25,9 +29,9 @@
   </head>
   <body>
     <nav>
-      <p>Hello, {{ user.displayName }} | 
-        <a href="/">Kitchen</a> | 
-        <a href="/auth/github">Login with Github</a> | 
+      <p>Hello, {{ user.displayName }} |
+        <a href="/">Kitchen</a> |
+        <a href="/auth/github">Login with Github</a> |
         <a href="/logout">Log Out</a></p>
     </nav>
 
@@ -47,5 +51,19 @@
     <!-- {{{ chat }}} -->
 
     <div ng-view></div>
+
+
+
+    <input id="whoAmI" type="text" placeholder="Who are you?"></input>
+    <input id="whoCall" type="text" placeholder="Who do you want to call?"></input>
+    <button id="hangup">Hangup</button>
+    <br/>
+    <div class="video-container">
+      <video class="them" autoplay="true"></video>
+      <video class="me rtc-pip" autoplay="true" muted="true"></video>
+    </div>
+
+
+
   </body>
 </html>

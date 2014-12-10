@@ -16,6 +16,8 @@
     "express-session": "^1.9.3",
     "firebase": "^2.0.6",
     "hjs": "~0.0.6",
+    "holla": "^0.6.3",
+    "http": "0.0.0",
     "method-override": "^2.3.0",
     "morgan": "~1.3.0",
     "passport": "^0.2.1",

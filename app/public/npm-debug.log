@@ -1,0 +1,23 @@
+0 info it worked if it ends with ok
+1 verbose cli [ 'node', '/usr/local/bin/npm', 'isntall', '--save', 'hola' ]
+2 info using npm@2.1.6
+3 info using node@v0.10.33
+4 verbose node symlink /usr/local/bin/node
+5 verbose stack Error: Cannot find module '/usr/local/lib/node_modules/npm/lib/isntall.js'
+5 verbose stack     at Function.Module._resolveFilename (module.js:338:15)
+5 verbose stack     at Function.Module._load (module.js:280:25)
+5 verbose stack     at Module.require (module.js:364:17)
+5 verbose stack     at require (module.js:380:17)
+5 verbose stack     at Object.defineProperty.get (/usr/local/lib/node_modules/npm/lib/npm.js:187:15)
+5 verbose stack     at EventEmitter.<anonymous> (/usr/local/lib/node_modules/npm/bin/npm-cli.js:72:28)
+5 verbose stack     at process._tickCallback (node.js:419:13)
+6 verbose cwd /Users/plauer/floobits/Greenfields/kitchencooks/app/public
+7 error Darwin 13.4.0
+8 error argv "node" "/usr/local/bin/npm" "isntall" "--save" "hola"
+9 error node v0.10.33
+10 error npm  v2.1.6
+11 error code MODULE_NOT_FOUND
+12 error Cannot find module '/usr/local/lib/node_modules/npm/lib/isntall.js'
+13 error If you need help, you may report this error at:
+13 error     <http://github.com/npm/npm/issues>
+14 verbose exit [ 1, true ]

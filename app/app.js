@@ -9,6 +9,7 @@ var passport = require('passport');
 var GitHubStrategy = require('passport-github').Strategy;
 var flash = require('connect-flash');
 
+
 // get a github api client_id and client_secret
 // can find them here: https://github.com/organizations/Kitchencooks/settings/applications/150833
 var GITHUB_CLIENT_ID = "9fc53664e3f5cda07061";
@@ -36,7 +37,7 @@ app.use('/users', users);
 app.get('/', function(req, res){
   res.render('index', { user: req.user });
 });
- 
+
 app.use(passport.initialize());
 
 // GitHub config, this callback should match callback in api
@@ -85,7 +86,7 @@ app.get('/auth/github',
     // so this function will not be called.
   });
 
-app.get('/auth/github/callback', 
+app.get('/auth/github/callback',
   passport.authenticate('github', { failureRedirect: '/' }),
   function(req, res) {
     console.log('req.user: ', req.user);
@@ -124,6 +125,21 @@ app.use(function(err, req, res, next) {
     });
 });
 
-app.listen('3000');
-
+var server = app.listen('3000');
 module.exports = app;
+
+//sockets
+var socket = require("socket.io");
+var io = socket.listen(server)
+
+//set up socket connection
+io.sockets.on('connection', function (socket) {
+  socket.emit('news', { hello: 'world' });
+  socket.on('my other event', function (data) {
+    console.log(data);
+  });
+});
+
+
+
+
